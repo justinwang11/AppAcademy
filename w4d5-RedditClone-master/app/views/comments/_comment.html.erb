@@ -1,0 +1,15 @@
+<%= comment.author.username %> says: <br />
+<%= comment.content %><br />
+<%= link_to "Reply", comment_url(comment) %>
+
+<%= button_to "+1", upvote_comment_url(comment) %>
+<%= button_to "-1", downvote_comment_url(comment) %>
+<%= comment.score %>
+
+<ul>
+  <% @comments_by_parent_id[comment.id].each do |child| %>
+    <li>
+      <%= render child %>
+    </li>
+  <% end %>
+</ul>

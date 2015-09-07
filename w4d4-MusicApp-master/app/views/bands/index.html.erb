@@ -1,0 +1,8 @@
+<h1>List of Bands</h1>
+<h2>Click on a band to view its albums!</h2>
+
+<ul>
+  <% @bands.each do |band| %>
+    <li><%= link_to band.name, band_url(band) %></li>
+  <% end %>
+</ul>

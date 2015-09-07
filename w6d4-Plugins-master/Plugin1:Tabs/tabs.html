@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <ul class='tabs' data-content-tabs="#content-tabs">
+      <li class="active"><a href='javascript:void(0);' for='#rottweiler'>Rottweiler</a></li>
+      <li><a href='javascript:void(0);' for='#germanshepherd'>German Shepherd</a></li>
+      <li><a href='javascript:void(0);' for='#pitbull'>Pitbull</a></li>
+    </ul>
+    <div id="content-tabs">
+      <div class="tab-pane active" id="rottweiler"><p>Rottweiler</p></div>
+      <div class="tab-pane" id="germanshepherd"><p>German Shepherd</p></div>
+      <div class="tab-pane" id="pitbull"><p>Pitbull</p></div>
+    </div>
+
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>

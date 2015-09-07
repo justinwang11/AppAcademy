@@ -1,0 +1,17 @@
+<br>
+<%= link_to "<< Back to bands", bands_url %>
+<h1><%= @band.name %></h1>
+
+<h2>Click on an album to view its tracks!</h2>
+
+<ul>
+  <% @band.albums.each do |album| %>
+    <li><%= link_to album.title, album_url(album) %></li>
+  <% end %>
+</ul>
+<br>
+<%= button_to "Create album", new_album_url, method: :get %>
+<br>
+<%= link_to "Edit Band", edit_band_url(@band) %>
+<br>
+<%= link_to "Delete Band", band_url(@band), method: :delete %>

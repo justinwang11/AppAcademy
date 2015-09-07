@@ -1,0 +1,27 @@
+<h1>New Goal</h1>
+
+<form action="<%= goals_url %>" method="POST">
+
+  <%= auth_input %>
+
+  <label>Title
+    <input type="text" name="goal[title]">
+  </label>
+
+  <label for="privacy_true">Private</label>
+  <input type="radio" name="goal[privacy]" id="privacy_true" value="true">
+    <br>
+
+  <label for="privacy_false">Public</label>
+  <input type="radio" name="goal[privacy]" id="privacy_false" value="false">
+
+  <input type="radio" name="goal[completion]" id="completion_true" value="true">
+    <label for="completion_true">Completed</label>
+    <br>
+
+  <input type="radio" name="goal[completion]" id="completion_false" value="false">
+    <label for="completion_false">Incomplete</label>
+
+  <input type="submit" value="Create Goal">
+
+</form>

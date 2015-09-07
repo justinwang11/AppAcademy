@@ -1,0 +1,15 @@
+<%= render @comment %>
+
+<form action="<%= comments_url(@post) %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="comment[parent_comment_id]" value="<%= @comment.id %>" />
+  <input type="hidden" name="comment[post_id]" value="<%= @post.id %>" />
+
+  <label for="content">Content
+    <input type="text" name="comment[content]" id="content" value="" autofocus />
+  </label>
+  <br />
+
+  <input type="submit" value="Create Comment!">
+</form>

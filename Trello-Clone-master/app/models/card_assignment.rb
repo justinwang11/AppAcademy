@@ -1,0 +1,5 @@
+class CardAssignment < ActiveRecord::Base
+
+  belongs_to :card
+
+end

@@ -1,0 +1,15 @@
+<%= link_to "<< Back to subs index", subs_url %>
+<br>
+<h1><%= @sub.title %></h1>
+<br>
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post_url(post) %>
+      <%= button_to "+1", upvote_post_url(post) %>
+      <%= button_to "-1", downvote_post_url(post) %>
+
+      <%= post.score %>
+    </li>
+  <% end  %>
+</ul>

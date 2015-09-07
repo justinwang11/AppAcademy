@@ -1,0 +1,6 @@
+<form action="<%= action %>" method="POST">
+  <input name="user_name" placeholder="Username"><br>
+  <input type="password" name="password" placeholder="Password"><br>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <input type="submit">
+</form>

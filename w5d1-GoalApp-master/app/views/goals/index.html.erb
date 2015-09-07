@@ -1,0 +1,6 @@
+<h1>Goals</h1>
+<ul>
+  <% @goals.try(:each) do |goal| %>
+    <li><%= link_to "#{goal.title}", goal_url(goal) %></li>
+  <% end %>
+</ul>

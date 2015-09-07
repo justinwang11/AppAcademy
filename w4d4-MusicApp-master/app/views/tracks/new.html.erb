@@ -1,0 +1,17 @@
+<body>
+  <h1><%= "Create a new track" %></h1>
+
+  <form action="<%= tracks_url %>" method="POST">
+
+    <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+
+    <p><input type="text" name="track[title]" id="track_title">Track Title</p>
+    <p><input type="number" name="track[album_id]" id="track_album_id">Album ID</p>
+    <p><textarea rows="10" cols="20" name="track[lyrics]" id="track_lyrics"></textarea></p>
+    <p><input type="submit" value="Create track"></p>
+  </form>
+
+</body>

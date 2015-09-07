@@ -1,0 +1,23 @@
+<h2>Rentals</h2>
+
+<% ["APPROVED", "DENIED", "PENDING"].each do |status|  %>
+  <table>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Status</th>
+
+  <% @cat_rental_requests.each do |rental| %>
+    <% if rental.status == status %>
+      <tr>
+        <td><%= p rental.start_date %></td>
+        <td><%= p rental.end_date %></td>
+        <td><%= p rental.status %></td>
+        <td><%= button_to "Approve", approve_cat_cat_rental_request_path(cat_id: rental.cat_id, id: rental.id)%></td>
+        <td><%= button_to "Deny", deny_cat_cat_rental_request_path(cat_id: rental.cat_id, id: rental.id) %></td>
+      </tr>
+
+    <% end %>
+  <% end %>
+  </table>
+  <br><br>
+<% end %>

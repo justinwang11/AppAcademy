@@ -1,0 +1,25 @@
+<%= @user.username %>
+
+<h2>Comments</h2>
+
+<ul>
+  <% @comments.try(:each) do |comment| %>
+    <li>
+      <%= comment.body %>
+      <%= button_to "Delete Comment", comment_url(comment), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Add Comment</h2>
+
+<form action="<%= comments_url %>" method="POST">
+  <%= auth_input %>
+  <input type="hidden" name="comment[user_id]" value="<%= @user.id %>">
+
+  <label>Body
+    <input type="text" name="comment[body]">
+  </label>
+
+  <input type="submit" value="Add Comment">
+</form>
